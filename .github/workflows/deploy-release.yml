@@ -18,7 +18,7 @@ jobs:
       is-existing-release: ${{ steps.pre_release.outputs.is-existing-release }}
     steps:
       - name: Perform pre-release actions
-        uses: danielemery/github-release-actions/perform-pre-release@v0.2.1
+        uses: danielemery/github-release-actions/perform-pre-release@v0.3.0-update-node-and-packages.0
         id: pre_release
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +57,7 @@ jobs:
           docker push ghcr.io/${{ github.repository }}:latest
 
       - name: Perform post-release actions
-        uses: danielemery/github-release-actions/perform-post-release@v0.2.1
+        uses: danielemery/github-release-actions/perform-post-release@v0.3.0-update-node-and-packages.0
         id: post_release
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
